@@ -51,8 +51,9 @@ def signup(request):
             user.is_active = False
             user.save()
             current_site = get_current_site(request)
+            print(current_site.domain)
             message = render_to_string('accounts/account_active_email.html', {
-                'user': user, 'domain': current_site.domain,
+                'user': user, 'domain': "girresidancy.herokuapp.com",
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
