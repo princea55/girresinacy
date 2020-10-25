@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'crispy_forms',
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -144,7 +144,7 @@ AUTHENTICATION_BACKENDS = (
  'allauth.account.auth_backends.AuthenticationBackend',
 #  'social_core.backends.facebook.FacebookOAuth2',
 )
-SITE_ID = 1
+SITE_ID = 2
 LOGIN_REDIRECT_URL = 'home'
 
 SOCIALACCOUNT_PROVIDERS = {

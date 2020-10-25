@@ -1,15 +1,51 @@
 {%extends 'base.html'%}
 {% load socialaccount %}
+{% load crispy_forms_tags %}
+{%block title%} | Login {% endblock %}
 {% block content%}
-    <div class="m-5">
-        <form action="" method="POST">
-            {%csrf_token%}
-            {{forms.as_p}}
-            <input type="submit" value="submit" />
-        </form>
-        <a href="{%url 'password_reset' %}">Forgot Password</a>
-        <a href="{% provider_login_url 'google' %}">Login with Google</a>
-        
-        <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-    </div>
+     <!-- Start Login Form -->
+     <section class="ftco-section bg-light">
+        <div class="container-fluid col-md-7 pb-2">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2>Login</h2>
+                </div>
+            </div>
+            <form action="" class="appointment-form" method="POST">
+                {%csrf_token%}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ forms.username|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ forms.password|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button class="btn-block loginBtn loginBtn--facebook"> Login with Facebook </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <a class="btn-block loginBtn loginBtn--google" href="{% provider_login_url 'google' %}">Login with Google</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <a class="btn btn-block" href="{%url 'password_reset' %}"> Forgot Password </a>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="Log In" class="btn btn-primary py-3 px-4 col-md-12">
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <a href="{% url 'signup' %}"> Create a new Account </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- End Login Form-->
 {% endblock%}

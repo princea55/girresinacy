@@ -1,0 +1,41 @@
+#header {
+    height: 50px;
+    background: #e7e2e352;
+    color: #000000;
+}
+#header a:link, #header a:visited{
+    color: #166ff1;
+}
+#branding h1{
+    color: #000000;
+}
+div.breadcrumbs a {
+    color: rgb(29, 27, 27);
+    font-size: medium;
+}
+div.breadcrumbs{
+    background: #e84e4e;
+    margin-bottom: 4px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: rgb(29, 27, 27);
+}
+a.section:link, a.section:visited {
+    color: #000000;
+    font-size: 14px;
+    
+}
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.module h2, .module caption, .inline-group h2 {
+    background: #7999c8;
+}
+.button.default, input[type=submit].default, .submit-row input.default {
+background: #e84e4e;
+}
+.button, input[type=submit], input[type=button], .submit-row input, a.button{
+    background: #e84e4e;
+}
+

@@ -1,19 +1,74 @@
 {%extends 'base.html'%}
+{%block title%} | Signup {% endblock %}
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-      {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-      {% endfor %}
+{% load crispy_forms_tags %}
+  <!-- Start Sign up Form -->
+  
+  <section class="ftco-section bg-light">
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2>Sign Up</h2>
+            </div>
+        </div>
+        <div class="col-md-7 justify-content-center pb-5 mb-5 m-auto">
+            <form action="" class="appointment-form" method="POST">
+              {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" name="first_name" placeholder="First Name"> -->
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" name="last_name" placeholder="Last Name"> -->
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" name="username" placeholder="User Name"> -->
+                            {{ form.username|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                          {{ form.email|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" name="contact" placeholder="Mobile Number"> -->
+                            {{ form.contact|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <input type="password" class="form-control" name="password1" placeholder="Password"> -->
+                            {{ form.password1|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <input type="password" class="form-control" name="password2" placeholder="Confirm Password"> -->
+                            {{ form.password2|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="submit" value="Sign Up" class="btn btn-primary py-3 px-4 col-md-12">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        Already have an account <a href="{% url 'login' %}"> Login Here </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- END Sign Up Form -->
 
-    <button type="submit">Sign up</button>
-  </form>
 {% endblock %}

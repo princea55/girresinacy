@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
 {%load static%}
+{%block title%} | Dashboard {% endblock %}
 {%block content%}
 
 <!-- Slider -->
@@ -187,7 +188,7 @@
                         <div class="services-2 col-lg-6 d-flex w-100">
                             <div class="icon d-flex justify-content-center align-items-center font-awesome-icon">
                                 <i class='fa fa-paw fa-2x'></i>
-                            </div>
+                                Ready to get started           </div>
                             <div class="media-body pl-3  d-flex align-items-center">
                                 <h3 class="heading display-5">Pets allowed</h3>
                             </div>
@@ -320,8 +321,8 @@
                 <h2>Ready to get started</h2>
                 <p class="mb-4">It’s safe to book online with us! Get your dream stay in clicks or drop us a line
                     with your questions.</p>
-                <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Book now</a> <a href="#"
-                        class="btn btn-white px-4 py-3">Contact us</a></p>
+                <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Book now</a> 
+                    <a href="{% url 'contact_us' %}" class="btn btn-white px-4 py-3">Contact us</a></p>
             </div>
         </div>
     </div>

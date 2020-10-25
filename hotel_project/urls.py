@@ -18,6 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView 
+
+# admin.site.site_header = "The Gir Garden Resort"
+admin.site.site_title = "Gir Garden Resort Admin Portal"
+admin.site.index_title = "Welcome to Gir Garden Resort Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hotel.urls')),

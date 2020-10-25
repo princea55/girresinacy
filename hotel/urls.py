@@ -2,13 +2,16 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
+from .forms import ConfirmPasswordresetform
 urlpatterns = [
     path("", views.home, name="home"),
     path("about_us", views.about, name="about"),
     path("services", views.services, name="services"),
     path("apartment_rooms", views.rooms, name="rooms"),
     path("contact_us", views.contact_us, name="contact_us"),
-    
+   
+
+
     path('login/', views.login, name="login"),
     path('signup/', views.signup, name="signup"),
     path('logout/', views.logout, name="logout"),

@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Vacation Rental - Free Bootstrap 4 Template by Colorlib</title>
+    <title>GG Residancy  {%block title%}{%endblock%}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -142,10 +142,10 @@
                 <div class="col d-flex justify-content-end">
                     <div class="social-media">
                         <p class="mb-0 d-flex">
-                            <!--<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>-->
+                            <a href="https://wa.me/message/KKPQVGPYZEG2D1" class="d-flex align-items-center justify-content-center"><span class="fab fa-whatsapp"><i class="sr-only">Whatsapp</i></span></a>
+                            <a href="https://www.facebook.com/girgarden.residancy" class="d-flex align-items-center justify-content-center"><span class="fab fa-facebook-f"><i class="sr-only">Facebook</i></span></a>
+                            <a href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub" class="d-flex align-items-center justify-content-center"><span class="fab fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                            
                         </p>
                     </div>
                 </div>
@@ -188,10 +188,8 @@
                         </div>
                     </li>
                     {%else%}
-                    <li class="nav-item"><a id="btnNewRecord" class="nav-link" data-toggle="modal"
-                            data-target="#signup">Sign Up</a></li>
-                    <li class="nav-item"><a id="btnNewRecord" class="nav-link" data-toggle="modal"
-                            data-target="#login">Log In</a></li>
+                            <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Sign Up</a></li>
+                            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
                     {%endif%}
                 </ul>
             </div>
@@ -295,7 +293,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="username" placeholder="User Name"
+                                    <input type="email" class="form-control" name="email" placeholder="Email"
                                         required>
                                 </div>
                             </div>
@@ -337,35 +335,43 @@
         </div>
     </div>
     <!-- Log In Modal End -->
+    
     {%block content%}
     {%endblock%}
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-md-0 mb-4">
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                     <h2 class="footer-heading"><a href="#" class="logo">Gir Garden Residancy</a></h2>
-                    <p>Gir Garden Resort, a perfect natural beauty within the Gir National Park, surrounded by mango
-                        orchard...</p>
-                    <a href="#">Read more <span class="fa fa-chevron-right" style="font-size: 11px;"></span></a>
+                    <p>Gir Garden Resort, a perfect natural beauty within the Gir National Park, surrounded by mango orchard...</p>
+                    <a href="{% url 'about' %}">Read more <span class="fa fa-chevron-right" style="font-size: 11px;"></span></a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-md-0 mb-4">
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                     <h2 class="footer-heading">Where we are</h2>
                     <p>Sasan-Talala road, at. Chitrod Patia. Dist.: Gir Somnath (Gujarat)</p>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-md-0 mb-4">
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                     <h2 class="footer-heading">Let's have a tour</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-1 d-block">About Us</a></li>
-                        <li><a href="#" class="py-1 d-block">Services</a></li>
-                        <li><a href="#" class="py-1 d-block">Hotel Rooms</a></li>
-                        <li><a href="#" class="py-1 d-block">Contact Us</a></li>
+                        <li><a href="{% url 'about' %}" class="py-1 d-block">About Us</a></li>
+                        <li><a href="{% url 'services' %}" class="py-1 d-block">Services</a></li>
+                        <li><a href="{% url 'rooms' %}" class="py-1 d-block">Hotel Rooms</a></li>
+                        <li><a href="{% url 'contact_us' %}" class="py-1 d-block">Contact Us</a></li>
                     </ul>
                 </div>
-
+                <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+                   
+                    <h2 class="footer-heading">Follow us</h2>
+                    <ul class="ftco-footer-social p-0">
+                        <li class="ftco-animate"><a href="https://wa.me/message/KKPQVGPYZEG2D1" data-toggle="tooltip" data-placement="top" title="Whatsapp"><span class="fab fa-whatsapp"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebook.com/girgarden.residancy" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fab fa-facebook-f"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fab fa-instagram"></span></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
+       
     </footer>
-
 
 
     <!-- loader -->
@@ -373,7 +379,9 @@
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
                 stroke="#F96D00" /></svg></div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
