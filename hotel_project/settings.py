@@ -149,7 +149,7 @@ AUTHENTICATION_BACKENDS = (
  'allauth.account.auth_backends.AuthenticationBackend',
  'social_core.backends.facebook.FacebookOAuth2'
 )
-SITE_ID = 2
+SITE_ID = 3
 LOGIN_REDIRECT_URL = 'home'
 
 

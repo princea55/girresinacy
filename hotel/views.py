@@ -30,7 +30,7 @@ def services(request):
 
 def rooms(request):
     return render(request, 'features/rooms.html')
-    
+
 def privacy(request):
     return render(request, 'features/privacy.html')
 
@@ -43,7 +43,7 @@ def contact_us(request):
             current_site = get_current_site(request)
                 
             message = render_to_string('partials/confirm_contact.html', {
-                'domain': current_site.domain,
+                'domain': 'girresidancy.herokuapp.com',
             })
                 
             mail_subject = 'Thank You For Contact Us'
@@ -82,7 +82,7 @@ def signup(request):
             current_site = get_current_site(request)
                 
             message = render_to_string('accounts/account_active_email.html', {
-                'user': user, 'domain': current_site.domain,
+                'user': user, 'domain': 'girresidancy.herokuapp.com',
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
@@ -213,7 +213,7 @@ def password_reset_request(request):
                 message = render_to_string('accounts/password_reset_sent_email.html',
                                            {
                                                'user': associated_users[0],
-                                               'domain': current_site.domain,
+                                               'domain':'girresidancy.herokuapp.com',
                                                'uid': urlsafe_base64_encode(force_bytes(user_id)),
                                                'token': default_token_generator.make_token(associated_users[0])
                                            })
