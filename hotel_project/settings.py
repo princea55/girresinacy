@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',   # <--
     'allauth.socialaccount.providers.google',
     'crispy_forms',
+    'social_django'
+
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'hotel_project.urls'
@@ -142,10 +145,14 @@ STATICFILES_DIRS = [STATIC_ROOT]
 AUTHENTICATION_BACKENDS = (
  'django.contrib.auth.backends.ModelBackend',
  'allauth.account.auth_backends.AuthenticationBackend',
-#  'social_core.backends.facebook.FacebookOAuth2',
+ 'social_core.backends.facebook.FacebookOAuth2'
 )
 SITE_ID = 2
 LOGIN_REDIRECT_URL = 'home'
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '649808659042380'        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '192a55206307ee66e074e474877bfbba'  # App Secret
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
