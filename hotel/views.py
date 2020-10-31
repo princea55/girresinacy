@@ -30,6 +30,9 @@ def services(request):
 
 def rooms(request):
     return render(request, 'features/rooms.html')
+    
+def privacy(request):
+    return render(request, 'features/privacy.html')
 
 def contact_us(request):
     if request.method == "POST":
