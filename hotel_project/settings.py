@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'hotel_project.wsgi.application'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'princesuriya14@gmail.com'
-EMAIL_HOST_PASSWORD = 'priNce141251'
+EMAIL_HOST_PASSWORD = 'laptop125114*'
 EMAIL_PORT = 587
 
 # Database
