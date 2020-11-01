@@ -188,7 +188,7 @@ def login(request):
                 }
                 return redirect('home')
             else:
-                messages.error(request, 'Invalid username or password')
+                messages.error(request, 'Invalid username or password', 'danger')
                 return redirect('login')
         else:
             return render(request, 'accounts/login.html', {"forms": forms})

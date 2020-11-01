@@ -95,7 +95,7 @@ EMAIL_PORT = 587
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hotel_gir',
+        'NAME': 'hotel_residancy',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -142,12 +142,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = [STATIC_ROOT]
-
+AUTH_USER_MODEL = 'hotel.User'
 # for social login
 AUTHENTICATION_BACKENDS = (
  'django.contrib.auth.backends.ModelBackend',
  'allauth.account.auth_backends.AuthenticationBackend',
- 'social_core.backends.facebook.FacebookOAuth2'
+ 'social_core.backends.facebook.FacebookOAuth2',
+ 'hotel.backends.EmailBackend'
 )
 SITE_ID = 3
 LOGIN_REDIRECT_URL = 'home'

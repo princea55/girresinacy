@@ -5,7 +5,8 @@ from .models import User, ContactUs
 
 @admin.register(User)
 class AdminUser(admin.ModelAdmin):
-    list_display = ('id','first_name','last_name','username','email','contact')
+    list_display = ('id','username','first_name','last_name','email','contact')
+    list_display_links = ('username',)
     search_fields = ('username', 'first_name', 'last_name', 'email')
     list_per_page = 30
 
