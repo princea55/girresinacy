@@ -12,7 +12,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 
 #password reset
 from django.contrib.auth.forms import PasswordResetForm
@@ -80,12 +80,13 @@ def signup(request):
             user.is_active = False
             user.save()
             current_site = get_current_site(request)
-                
+            
             message = render_to_string('accounts/account_active_email.html', {
                 'user': user, 'domain': 'girresidancy.herokuapp.com',
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
+            
             # Sending activation link in terminal
             # user.email_user(subject, message)
             mail_subject = 'Activate your account.'
