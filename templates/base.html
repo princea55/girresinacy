@@ -4,7 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>GG Residancy  {%block title%}{%endblock%}</title>
+    <title>GG Residancy {%block title%}{%endblock%}</title>
+    <link rel="shortcut icon" href="{% static 'images/Logo.png' %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,9 +14,9 @@
     <link
         href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap"
         rel="stylesheet">
-
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -27,107 +28,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
-    <style>
-        .carousel-item {
-            height: 100vh;
-            min-height: 350px;
-            background: no-repeat center center scroll;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
 
-        .modal-body {
-            max-height: 60vh;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .fake-button {
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .form-style-base {
-            position: absolute;
-            top: 0px;
-            z-index: 999;
-            opacity: 0;
-        }
-
-        /* Shared */
-
-        .loginBtn {
-            box-sizing: border-box;
-            position: relative;
-            margin: 0.2em;
-            padding: 0 15px 0 46px;
-            border: none;
-            text-align: left;
-            line-height: 34px;
-            white-space: nowrap;
-            border-radius: 0.2em;
-            font-size: 16px;
-            color: #FFF;
-        }
-
-        .loginBtn:before {
-            content: "";
-            box-sizing: border-box;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 34px;
-            height: 100%;
-        }
-
-        .loginBtn:focus {
-            outline: none;
-        }
-
-        .loginBtn:active {
-            box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Facebook */
-
-        .loginBtn--facebook {
-            background-color: #4C69BA;
-            background-image: linear-gradient(#4C69BA, #3B55A0);
-            text-shadow: 0 -1px 0 #354C8C;
-        }
-
-        .loginBtn--facebook:before {
-            border-right: #364e92 1px solid;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
-        }
-
-        .loginBtn--facebook:hover,
-        .loginBtn--facebook:focus {
-            background-color: #5B7BD5;
-            background-image: linear-gradient(#5B7BD5, #4864B1);
-        }
-
-        /* Google */
-
-        .loginBtn--google {
-            font-family: "Roboto", Roboto, arial, sans-serif;
-            background: #DD4B39;
-        }
-
-        .loginBtn--google:before {
-            border-right: #BB3F30 1px solid;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
-        }
-
-        .loginBtn--google:hover,
-        .loginBtn--google:focus {
-            background: #E74B37;
-        }
-    </style>
 </head>
 
 <body>
@@ -142,17 +43,23 @@
                 <div class="col d-flex justify-content-end">
                     <div class="social-media">
                         <p class="mb-0 d-flex">
-                            <a href="https://wa.me/message/KKPQVGPYZEG2D1" class="d-flex align-items-center justify-content-center"><span class="fab fa-whatsapp"><i class="sr-only">Whatsapp</i></span></a>
-                            <a href="https://www.facebook.com/girgarden.residancy" class="d-flex align-items-center justify-content-center"><span class="fab fa-facebook-f"><i class="sr-only">Facebook</i></span></a>
-                            <a href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub" class="d-flex align-items-center justify-content-center"><span class="fab fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                            
+                            <a href="https://wa.me/message/KKPQVGPYZEG2D1"
+                                class="d-flex align-items-center justify-content-center"><span
+                                    class="fab fa-whatsapp"><i class="sr-only">Whatsapp</i></span></a>
+                            <a href="https://www.facebook.com/girgarden.residancy"
+                                class="d-flex align-items-center justify-content-center"><span
+                                    class="fab fa-facebook-f"><i class="sr-only">Facebook</i></span></a>
+                            <a href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub"
+                                class="d-flex align-items-center justify-content-center"><span
+                                    class="fab fa-instagram"><i class="sr-only">Instagram</i></span></a>
+
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- END nav -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container" style="padding-left:50px;">
             <!--<a class="navbar-brand" href="index.html">Vacation<span>Rental</span></a>-->
@@ -168,183 +75,40 @@
                     <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="{% url 'rooms' %}" class="nav-link">Apartment Room</a></li>
+                    <li class="nav-item"><a href="{% url 'rooms' %}" class="nav-link">Hotel Room</a></li>
                     <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link">Contact</a></li>
                     {%if user.is_authenticated%}
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-100 small">{{user.username}}</span>
-                        </a>
-                        <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="userDropdown">
-
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'logout' %}">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
-                            </a>
+                   
+                    <div class="btn-group">
+                        <button type="button" class="btn  btn-sm dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            {{user.username}}
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                           
                         </div>
-                    </li>
+                    </div>
                     {%else%}
-                            <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Sign Up</a></li>
-                            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
+                    <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Sign Up</a></li>
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
                     {%endif%}
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- END nav -->
-
-    <!-- Sign Up Modal -->
-    <div class="modal fade" id="signup" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Sign Up</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="{% url 'signup' %}" class="appointment-form" method="POST">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="first_name" placeholder="First Name"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="last_name" placeholder="Last Name"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="username" placeholder="User Name"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="email" placeholder="Email Address"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="contact" placeholder="Mobile Number"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" name="password1" placeholder="Password"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" name="password2"
-                                        placeholder="Confirm Password" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12 d-flex justify-content-center">
-                                <input type="submit" value="Sign Up" class="btn btn-primary py-3 px-4">
-                            </div>
-                            <!-- <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="file" class="form-control form-style-base" name="profilePicture" onChange="readURL(this)">
-                                    <h4 class="btn btn-primary fake-button py-3 px-4"> Updload Profile Picture </h4>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-md-12">
-                                <div class="form-group d-flex justify-content-center">
-                                    <img id="uploadimage" class="img-thumbnail" style="max-width: 100px;" src="images/profile-avatar.jpeg" />
-                                </div>
-                            </div> -->
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" name="btnCloseModal" class="btn btn-default" data-dismiss="modal"
-                        value="Close">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sign Up Modal End -->
-    <!-- Log In Modal -->
-    <div class="modal fade" id="login" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">log In</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="{% url 'login' %}" class="appointment-form" method="POST">
-                        {%csrf_token%}
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-md-12 d-flex justify-content-center mb-3">
-                                <input type="submit" value="Log In" class="btn btn-primary py-3 px-4">
-                            </div>
-
-                            <div class="col-md-12">
-                                <a class="btn btn-block" href="{%url 'password_reset' %}"> Forgot Password </a>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <button class="btn-block loginBtn loginBtn--facebook"> Login with Facebook </button>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <a class="btn-block loginBtn loginBtn--google" href="{% provider_login_url 'google' %}">Login with Google</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <!-- <input type="submit" value="Log In" class="btn btn-primary py-3 px-4"> -->
-                    <input type="button" name="btnCloseModal" class="btn btn-default" data-dismiss="modal"
-                        value="Close">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Log In Modal End -->
-    
     {%block content%}
     {%endblock%}
+
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                     <h2 class="footer-heading"><a href="#" class="logo">Gir Garden Residancy</a></h2>
-                    <p>Gir Garden Resort, a perfect natural beauty within the Gir National Park, surrounded by mango orchard...</p>
-                    <a href="{% url 'about' %}">Read more <span class="fa fa-chevron-right" style="font-size: 11px;"></span></a>
+                    <p>Gir Garden Resort, a perfect natural beauty within the Gir National Park, surrounded by mango
+                        orchard...</p>
+                    <a href="{% url 'about' %}">Read more <span class="fa fa-chevron-right"
+                            style="font-size: 11px;"></span></a>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                     <h2 class="footer-heading">Where we are</h2>
@@ -360,28 +124,33 @@
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-                   
+
                     <h2 class="footer-heading">Follow us</h2>
                     <ul class="ftco-footer-social p-0">
-                        <li class="ftco-animate"><a href="https://wa.me/message/KKPQVGPYZEG2D1" data-toggle="tooltip" data-placement="top" title="Whatsapp"><span class="fab fa-whatsapp"></span></a></li>
-                        <li class="ftco-animate"><a href="https://www.facebook.com/girgarden.residancy" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fab fa-facebook-f"></span></a></li>
-                        <li class="ftco-animate"><a href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fab fa-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="https://wa.me/message/KKPQVGPYZEG2D1" data-toggle="tooltip"
+                                data-placement="top" title="Whatsapp"><span class="fab fa-whatsapp"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebook.com/girgarden.residancy"
+                                data-toggle="tooltip" data-placement="top" title="Facebook"><span
+                                    class="fab fa-facebook-f"></span></a></li>
+                        <li class="ftco-animate"><a
+                                href="https://www.instagram.com/invites/contact/?i=1v5rf6cl37pgq&utm_content=jx7pfub"
+                                data-toggle="tooltip" data-placement="top" title="Instagram"><span
+                                    class="fab fa-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-       
-    </footer>
 
+    </footer>
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
                 stroke="#F96D00" /></svg></div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>

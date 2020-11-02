@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{%load static%}
+{% load crispy_forms_tags %}
+{%block title%} | Rooms Book {% endblock %}
+{%block content%}
+{%include 'partials/alerts.html'%}
+<section class="ftco-section bg-light">
+    <div class="container-fluid col-md-7 pb-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2>Book Room</h2>
+            </div>
+        </div>
+        <form  class="appointment-form" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <!-- <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phone Number">
+                    </div>
+                </div> -->
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <!-- <input type="text" class="form-control" placeholder="Arrival Date" onfocus="(this.type='date')"> -->
+                        {{ forms.arrival_date|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <!-- <select class="form-control">
+                            <option value="" disabled=true selected=true hidden=true>Number of Days</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select> -->
+                        {{ forms.days|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <!-- <input type="number" class="form-control" placeholder="Number of Guests"> -->
+                        {{ forms.number_of_guests|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <!-- <textarea class="form-control" cols="5" placeholder="Notes"></textarea> -->
+                        {{ forms.notes|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-4 col-md-12">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

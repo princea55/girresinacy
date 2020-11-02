@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rh$t!d#pdh+xjm$aqw7mrxstmra7@hsn(%zfy8(=&7c%q^^2y7'
+
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,9 +87,9 @@ WSGI_APPLICATION = 'hotel_project.wsgi.application'
 #for mail send
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'princesuriya14@gmail.com'
-EMAIL_HOST_PASSWORD = 'laptop125114*'
-EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -154,8 +156,9 @@ SITE_ID = 4
 LOGIN_REDIRECT_URL = 'home'
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '649808659042380'        # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '192a55206307ee66e074e474877bfbba'  # App Secret
+
+SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -170,10 +173,3 @@ SOCIALACCOUNT_PROVIDERS = {
     
 }
 django_heroku.settings(locals())
-# my id 
-# 649808659042380
-# 192a55206307ee66e074e474877bfbba
-
-# hiten
-# 689252451692863
-# ceecd5cc737357a43c13689dcbeb5bde

@@ -17,3 +17,26 @@ class ContactUs(models.Model):
     
     class Meta:
         verbose_name_plural = "ContactUs"
+
+numbers_of_days = (
+    ("1", "1"),
+    ('2',"2"),
+    ('3', "3"),
+    ('4', "4"),
+    ('5', "5"),
+    ('6', "6"),
+)
+
+class Roombook(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='roombook')
+    arrival_date = models.DateField(null=False)
+    days = models.CharField(max_length=10, choices=numbers_of_days, null=False)
+    number_of_guests = models.CharField(max_length=10, null=False)
+    notes = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.user.username
+    
+    class Meta:
+        verbose_name_plural = "Roombook"
+
